@@ -5,7 +5,7 @@ return array(
             'Admin\Controller\Admin' => 'Admin\Controller\AdminController',
         ),
     ),
-     'router' => array(
+    'router' => array(
         'routes' => array(
             'admin' => array(
                 'type'    => 'segment',
@@ -17,16 +17,15 @@ return array(
                     ),
                     'defaults' => array(
                         'controller' => 'Admin\Controller\Admin',
-                        'action'     => 'index',
+                        'action'     => 'login',
                     ),
                 ),
             ),
         ),
     ),
-   
-    'view_manager' => array(
+   'view_manager' => array(
         'template_path_stack' => array(
-            'user' => __DIR__ . '/../view/',
+            'admin' => __DIR__ . '/../view/',
             'paginator-slide' => __DIR__ . '/../view/layout/slidePaginator.phtml',
         ),
     ),

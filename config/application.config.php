@@ -5,16 +5,18 @@
  *
  * @see https://github.com/zendframework/ZFTool
  */
-ini_set('display_errors',0);
+ini_set('display_errors',1);
+$env = getenv('APP_ENV') ?: 'production';
+$modules=array('Application');
+if($env=='development'){
+	$modules[]='Album';
+	$modules[]='ZFTool';
+}
+$modules[]='User';
+$modules[]='Post';
+$modules[]='Admin';
 return array(
-    'modules' => array(
-        'Application',
-        'Album',
-        'ZFTool',
-        'User',
-        'Post',
-        'Admin',
-    ),
+    'modules' =>$modules,
     'module_listener_options' => array(
         'module_paths' => array(
             './module',
@@ -22,6 +24,6 @@ return array(
         ),
         'config_glob_paths' => array(
             './config/autoload/{,*.}{global,local}.php'
-        )
-    )
+        ),
+    ),
 );

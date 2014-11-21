@@ -44,7 +44,7 @@ return array(
                     'defaults' => array(
                         '__NAMESPACE__' => 'User\Controller',
                         'controller'    => 'User',
-                        'action'        => 'login',
+                        'action'        => 'index',
                     ),
                 ),
                 'may_terminate' => true,
