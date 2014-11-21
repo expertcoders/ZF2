@@ -1,9 +1,9 @@
 <?php
-namespace User;
+namespace Admin;
 
 // Add these import statements:
-use User\Model\User;
-use User\Model\UserTable;
+use Admin\Model\Admin;
+use Admin\Model\AdminTable;
 use Zend\Db\ResultSet\ResultSet;
 use Zend\Db\TableGateway\TableGateway;
 
@@ -33,12 +33,12 @@ class Module
     {
         return array(
             'factories' => array(
-                'User\Model\UserTable' =>  function($sm) {
-                    $tableGateway = $sm->get('UserTableGateway');
-                    $table = new UserTable($tableGateway);
+                'Admin\Model\AdminTable' =>  function($sm) {
+                    $tableGateway = $sm->get('AdminTableGateway');
+                    $table = new AdminTable($tableGateway);
                     return $table;
                 },
-                'UserTableGateway' => function ($sm) {
+                'AdminTableGateway' => function ($sm) {
                     $dbAdapter = $sm->get('Zend\Db\Adapter\Adapter');
                     $resultSetPrototype = new ResultSet();
                     $resultSetPrototype->setArrayObjectPrototype(new User());

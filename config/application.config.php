@@ -12,7 +12,8 @@ return array(
         'Album',
         'ZFTool',
         'User',
-        'Post'
+        'Post',
+        'Admin',
     ),
     'module_listener_options' => array(
         'module_paths' => array(
